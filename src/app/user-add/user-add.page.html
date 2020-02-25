@@ -1,0 +1,93 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Add users</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="example-container mat-elevation-z8">
+    <div class="example-loading-shade"
+         *ngIf="isLoadingResults">
+      <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+    </div>
+    <mat-card class="example-card">
+      <form [formGroup]="addUserForm" (ngSubmit)="onFormSubmit()">
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Name" formControlName="name"
+                 [errorStateMatcher]="matcher">
+          <mat-error>
+            <span *ngIf="!addUserForm.get('name').valid && addUserForm.get('name').touched">Please enter name</span>
+          </mat-error>
+        </mat-form-field>
+       
+       
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="RMN Number" formControlName="rmn"
+                 [errorStateMatcher]="matcher">
+          <mat-error>
+            <span *ngIf="!addUserForm.get('rmn').valid && addUserForm.get('rmn').touched">Please enter RMN Number</span>
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Email" formControlName="email"
+                 [errorStateMatcher]="matcher">
+          <mat-error>
+            <span *ngIf="!addUserForm.get('email').valid && addUserForm.get('email').touched">Please enter email</span>
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Gender" formControlName="gender"
+                 [errorStateMatcher]="matcher">
+          <mat-error>
+            <span *ngIf="!addUserForm.get('gender').valid && addUserForm.get('gender').touched">Please enter gender</span>
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Age Group" formControlName="age_group"
+                 [errorStateMatcher]="matcher">
+          <mat-error>
+            <span *ngIf="!addUserForm.get('age_group').valid && addUserForm.get('age_group').touched">Please enter age_group</span>
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Profession" formControlName="profession"
+                 [errorStateMatcher]="matcher">
+          <mat-error>
+            <span *ngIf="!addUserForm.get('profession').valid && addUserForm.get('profession').touched">Please enter profession</span>
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="DOB" formControlName="dob"
+                 [errorStateMatcher]="matcher">
+          <mat-error>
+            <span *ngIf="!addUserForm.get('dob').valid && addUserForm.get('dob').touched">Please enter dob</span>
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Sponsor Number" formControlName="sponsor_number"
+                 [errorStateMatcher]="matcher">
+          <mat-error>
+            <span *ngIf="!addUserForm.get('sponsor_number').valid && addUserForm.get('sponsor_number').touched">Please enter sponsor_number</span>
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Sponsor Name" formControlName="sponsor_name"
+                 [errorStateMatcher]="matcher">
+          <mat-error>
+            <span *ngIf="!addUserForm.get('sponsor_name').valid && addUserForm.get('sponsor_name').touched">Please enter sponsor_name</span>
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="District" formControlName="district"
+                 [errorStateMatcher]="matcher">
+          <mat-error>
+            <span *ngIf="!addUserForm.get('district').valid && addUserForm.get('district').touched">Please enter district</span>
+          </mat-error>
+        </mat-form-field>
+        <div class="button-row">
+          <button type="submit"  mat-flat-button color="primary"><mat-icon>save</mat-icon>Save</button>
+        </div>
+      </form>
+    </mat-card>
+  </div>
+</ion-content>
